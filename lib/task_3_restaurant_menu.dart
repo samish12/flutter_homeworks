@@ -62,11 +62,11 @@ class RestaurantMenu extends StatelessWidget {
                           label: Text("\$ 12.50"),
                           labelStyle: TextStyle(
                             fontSize: 15,
-                            color: Colors.black,
+                            color: Colors.white,
                           ),
                           backgroundColor: Color(0xffb9462e),
                           shape: RoundedRectangleBorder(
-                            borderRadius: BorderRadiusGeometry.circular(10),
+                            borderRadius: BorderRadiusGeometry.circular(20),
                           ),
                         ),
                       ],
