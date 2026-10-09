@@ -1,10 +1,33 @@
 import 'package:flutter/material.dart';
-
-import 'task_1_profile.dart';
-import 'task_2_course_dashboard.dart';
-import 'task_3_restaurant_menu.dart';
-import 'task_4_boarding_pass.dart';
+import 'package:flutter_homework_02/screens/onboarding_screen.dart';
+import 'package:flutter_homework_02/screens/quiz_screen.dart';
 
 void main() {
-  runApp(MaterialApp(debugShowCheckedModeBanner: false, home: BoardingPass()));
+  runApp(const OnboardingApp());
+}
+
+class OnboardingApp extends StatelessWidget {
+  const new({super.key});
+
+  @override
+  Widget build(BuildContext context) {
+    return MaterialApp(
+      debugShowCheckedModeBanner: false,
+      title: 'Onboarding App',
+      home: OnboardingScreen(),
+    );
+  }
+}
+
+class QuizApp extends StatelessWidget {
+  const QuizApp({super.key});
+
+  @override
+  Widget build(BuildContext context) {
+    return const MaterialApp(
+      debugShowCheckedModeBanner: false,
+      title: 'Quiz App',
+      home: QuizScreen(),
+    );
+  }
 }
