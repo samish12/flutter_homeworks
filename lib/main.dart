@@ -1,18 +1,39 @@
+import 'package:flutter_homework_02/ui/home_page.dart';
+import 'package:flutter_homework_02/ui/login_page.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter_homework_02/home_page_screen.dart';
+import 'package:shared_preferences/shared_preferences.dart';
 
-void main() {
-  runApp(const HomePage());
+// bool firstOpen = true;
+// ? Declartion
+late SharedPreferences prefs;
+
+void main() async {
+  WidgetsFlutterBinding.ensureInitialized();
+  // ? inilization
+  prefs = await SharedPreferences.getInstance();
+
+  runApp(MyApp());
 }
 
-class HomePage extends StatelessWidget {
-  const new({super.key});
+class MyApp extends StatelessWidget {
+  new({super.key});
+
+  // bool firstOpen = prefs.getBool('firstOpen') ?? false;
+  bool notHasToken = checkIfHasToken(prefs);
 
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
-      debugShowCheckedModeBanner: false,
-      home: HomePageScreen(),
+      // ? in-line if
+      home: notHasToken ? LoginPage() : HomePage(),
     );
+  }
+}
+
+bool checkIfHasToken(SharedPreferences object) {
+  if (object.getString("token") == null) {
+    return true;
+  } else {
+    return false;
   }
 }
