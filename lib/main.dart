@@ -14,7 +14,7 @@ class OnboardingApp extends StatelessWidget {
     return MaterialApp(
       debugShowCheckedModeBanner: false,
       title: 'Onboarding App',
-      home: OnboardingScreen(),
+      home: QuizScreen(),
     );
   }
 }
