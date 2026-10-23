@@ -1,4 +1,6 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_homework_02/main.dart';
+import 'package:flutter_homework_02/ui/login_page.dart';
 
 class HelloPage extends StatefulWidget {
   const new({super.key});
@@ -17,6 +19,13 @@ class _HelloPageState extends State<HelloPage> {
         child: TweenAnimationBuilder(
           tween: tween,
           duration: Duration(seconds: 3),
+          onEnd: () {
+            prefs.setBool('firstOpen', false);
+            Navigator.pushReplacement(
+              context,
+              MaterialPageRoute(builder: (context) => LoginPage()),
+            );
+          },
           builder: (context, value, child) => FlutterLogo(size: value * 300),
         ),
       ),

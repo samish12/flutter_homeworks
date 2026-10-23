@@ -1,3 +1,4 @@
+import 'package:flutter_homework_02/ui/hello_page.dart';
 import 'package:flutter_homework_02/ui/home_page.dart';
 import 'package:flutter_homework_02/ui/login_page.dart';
 import 'package:flutter/material.dart';
@@ -20,12 +21,15 @@ class MyApp extends StatelessWidget {
 
   // bool firstOpen = prefs.getBool('firstOpen') ?? false;
   bool notHasToken = checkIfHasToken(prefs);
+  bool firstOpen = prefs.getBool('firstOpen') ?? true;
 
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
       // ? in-line if
-      home: notHasToken ? LoginPage() : HomePage(),
+      home: firstOpen
+          ? const HelloPage()
+          : (notHasToken ? LoginPage() : const HomePage()),
     );
   }
 }
