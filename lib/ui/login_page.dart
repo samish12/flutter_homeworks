@@ -5,7 +5,7 @@ import 'package:flutter_homework_02/ui/home_page.dart';
 import 'package:flutter/material.dart';
 
 class LoginPage extends StatelessWidget {
-  new({super.key});
+  LoginPage({super.key});
   TextEditingController name = TextEditingController();
   TextEditingController password = TextEditingController();
 
@@ -27,11 +27,12 @@ class LoginPage extends StatelessWidget {
                   UserModel(name: name.text, password: password.text),
                 );
                 if (status) {
-                  Navigator.push(
+                  Navigator.pushReplacement(
                     context,
-                    MaterialPageRoute(builder: (context) => HomePage()),
+                    MaterialPageRoute(builder: (context) => const HomePage()),
                   );
                 } else {
+                  // ... else {
                   ScaffoldMessenger.of(context).showSnackBar(
                     SnackBar(
                       behavior: SnackBarBehavior.floating,

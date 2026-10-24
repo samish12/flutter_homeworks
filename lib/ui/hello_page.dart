@@ -3,7 +3,7 @@ import 'package:flutter_homework_02/main.dart';
 import 'package:flutter_homework_02/ui/login_page.dart';
 
 class HelloPage extends StatefulWidget {
-  const new({super.key});
+  const HelloPage({super.key});
 
   @override
   State<HelloPage> createState() => _HelloPageState();

@@ -3,15 +3,15 @@ import 'package:flutter_homework_02/ui/login_page.dart';
 import 'package:flutter/material.dart';
 
 class HomePage extends StatelessWidget {
-  const new({super.key});
+  const HomePage({super.key}); // Fixed constructor
 
   @override
   Widget build(BuildContext context) {
     return Scaffold(
       floatingActionButton: FloatingActionButton(
         onPressed: () {
-          prefs.clear();
-          Navigator.push(
+          prefs.remove('token');
+          Navigator.pushReplacement(
             context,
             MaterialPageRoute(builder: (context) => LoginPage()),
           );

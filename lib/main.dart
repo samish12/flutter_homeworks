@@ -17,7 +17,7 @@ void main() async {
 }
 
 class MyApp extends StatelessWidget {
-  new({super.key});
+  MyApp({super.key});
 
   // bool firstOpen = prefs.getBool('firstOpen') ?? false;
   bool notHasToken = checkIfHasToken(prefs);
