@@ -1,6 +1,6 @@
 import 'package:bloc/bloc.dart';
-import 'package:counter_example/auth/model/request_otp_model.dart';
-import 'package:counter_example/auth/service/auth_service.dart';
+import 'package:flutter_homework_02/auth/model/request_otp_model.dart';
+import 'package:flutter_homework_02/auth/service/auth_service.dart';
 import 'package:meta/meta.dart';
 
 part 'auth_event.dart';
